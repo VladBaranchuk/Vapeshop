@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище VapeModelContainer" CdmEntityContainer="VapeEntities">
+    <EntitySetMapping Name="Basket">
+      <EntityTypeMapping TypeName="VapeModel.Basket">
+        <MappingFragment StoreEntitySet="Basket">
+          <ScalarProperty Name="basket_id" ColumnName="basket_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="complete" ColumnName="complete" />
+          <ScalarProperty Name="confirm" ColumnName="confirm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Brand">
+      <EntityTypeMapping TypeName="VapeModel.Brand">
+        <MappingFragment StoreEntitySet="Brand">
+          <ScalarProperty Name="brand_id" ColumnName="brand_id" />
+          <ScalarProperty Name="brand1" ColumnName="brand" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Country">
+      <EntityTypeMapping TypeName="VapeModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="country_id" ColumnName="country_id" />
+          <ScalarProperty Name="country1" ColumnName="country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Manufacturer">
+      <EntityTypeMapping TypeName="VapeModel.Manufacturer">
+        <MappingFragment StoreEntitySet="Manufacturer">
+          <ScalarProperty Name="manufacturer_id" ColumnName="manufacturer_id" />
+          <ScalarProperty Name="manufacturer1" ColumnName="manufacturer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="VapeModel.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="basket_id" ColumnName="basket_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pod">
+      <EntityTypeMapping TypeName="VapeModel.Pod">
+        <MappingFragment StoreEntitySet="Pod">
+          <ScalarProperty Name="pod_id" ColumnName="pod_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="battery_capacity" ColumnName="battery_capacity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="VapeModel.Products">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="country_id" ColumnName="country_id" />
+          <ScalarProperty Name="brand_id" ColumnName="brand_id" />
+          <ScalarProperty Name="manufacturer_id" ColumnName="manufacturer_id" />
+          <ScalarProperty Name="section_id" ColumnName="section_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Section">
+      <EntityTypeMapping TypeName="VapeModel.Section">
+        <MappingFragment StoreEntitySet="Section">
+          <ScalarProperty Name="section_id" ColumnName="section_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tobacco_heating_systems">
+      <EntityTypeMapping TypeName="VapeModel.Tobacco_heating_systems">
+        <MappingFragment StoreEntitySet="Tobacco_heating_systems">
+          <ScalarProperty Name="ths_id" ColumnName="ths_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="battery_capacity" ColumnName="battery_capacity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="VapeModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vapes">
+      <EntityTypeMapping TypeName="VapeModel.Vapes">
+        <MappingFragment StoreEntitySet="Vapes">
+          <ScalarProperty Name="vape_id" ColumnName="vape_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="peak_power" ColumnName="peak_power" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vaping_liquid">
+      <EntityTypeMapping TypeName="VapeModel.Vaping_liquid">
+        <MappingFragment StoreEntitySet="Vaping_liquid">
+          <ScalarProperty Name="vaping_liquid_id" ColumnName="vaping_liquid_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="taste" ColumnName="taste" />
+          <ScalarProperty Name="volume" ColumnName="volume" />
+          <ScalarProperty Name="strong" ColumnName="strong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

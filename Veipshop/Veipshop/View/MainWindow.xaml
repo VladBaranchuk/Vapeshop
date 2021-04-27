@@ -1,0 +1,39 @@
+﻿<Window x:Class="Veipshop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Veipshop.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="768" Width="1366">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../View/LoginView.xaml" />
+                <ResourceDictionary Source="../View/SignupView.xaml" />
+                <ResourceDictionary Source="../View/RegistrationView.xaml" />
+                <ResourceDictionary Source="../View/User/AppUserView.xaml" />
+                <ResourceDictionary Source="../View/User/CatalogView.xaml" />
+                <ResourceDictionary Source="../View/User/PodView.xaml" />
+                <ResourceDictionary Source="../View/User/THSView.xaml" />
+                <ResourceDictionary Source="../View/User/VapingLiquidView.xaml" />
+                <ResourceDictionary Source="../View/User/VapesView.xaml" />
+                <ResourceDictionary Source="../View/User/BasketView.xaml" />
+                <ResourceDictionary Source="../View/User/OrdersView.xaml" />
+                <ResourceDictionary Source="../View/User/SearchView.xaml" />
+                <ResourceDictionary Source="../View/Administrator/AppAdministratorView.xaml" />
+                <ResourceDictionary Source="../View/Administrator/AdministratorCatalogView.xaml" />
+                <ResourceDictionary Source="../View/Administrator/AdministratorPodView.xaml" />
+                <ResourceDictionary Source="../View/Administrator/AdministratorTHSView.xaml" />
+                <ResourceDictionary Source="../View/Administrator/AdministratorVapingLiquidView.xaml" />
+                <ResourceDictionary Source="../View/Administrator/AdministratorVapesView.xaml" />
+                <ResourceDictionary Source="../View/Administrator/AdministratorSearchView.xaml" />
+                <ResourceDictionary Source="../View/Administrator/AdministratorOrdersView.xaml" />
+                <ResourceDictionary Source="../View/Administrator/AdministratorAddProductView.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <ContentPresenter Content="{Binding CurrentVM}"/>
+    </Grid>
+</Window>

@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Veipshop.ViewModel.Administrator"
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                    xmlns:service="clr-namespace:Veipshop.Service">
+    <DataTemplate DataType="{x:Type local:AdministratorCatalogVM}">
+        <DataTemplate.Resources>
+            <service:ImagePathConverter x:Key="ImagePathConverter"/>
+        </DataTemplate.Resources>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Height="30" Grid.Row="0">
+                <TextBlock Text="{Binding SectionName}" FontSize="16" FontWeight="Bold"/>
+            </Grid>
+            <Grid Grid.Row="1" >
+                <ListBox ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  Grid.Column="0" Width="1024">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel IsItemsHost="True" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" Width="190" Margin="25">
+                                <Image Source="{Binding Path=product_id, Converter={StaticResource ImagePathConverter}}" Height="200" />
+                                <TextBlock Text="{Binding Path=name}" TextWrapping="Wrap" TextAlignment="Center" Height="54" Margin="7,0"/>
+                                <TextBlock Text="{Binding StringFormat=\{0\} рублей, Path=price}" TextWrapping="Wrap" FontSize="16" FontWeight="Bold" TextAlignment="Center" Height="26" Margin="10,0" Width="170"/>
+                                <Button Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext.DeleteCommand}"
+                                        CommandParameter="{Binding}"
+                                        Height="32"
+                                        Margin="28,0">Удалить</Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction
+                                            Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext.ClickCommand}"
+                                            CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext.SelectedProduct}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ListBox>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

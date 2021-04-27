@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Veipshop.ViewModel">
+    <DataTemplate DataType="{x:Type local:RegistrationVM}">
+        <Grid>
+            <DockPanel>
+                <Grid DockPanel.Dock="Left" Width="147">
+                    <StackPanel Grid.Row="2" Background="#C4C4C4">
+                        <Button Command="{Binding LoginCommand}" FontFamily="Calibri" FontSize="18" FontWeight="Bold" Foreground="Black" Background="Transparent" BorderThickness="0" Height="50">Вход</Button>
+                        <Button Command="{Binding SignupCommand}" FontFamily="Calibri" FontSize="18" FontWeight="Bold" Foreground="Black" Background="Transparent" BorderThickness="0" Height="50">Регистрация</Button>
+                    </StackPanel>
+                </Grid>
+                <ContentPresenter Content="{Binding CurrentVM}"/>
+            </DockPanel>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

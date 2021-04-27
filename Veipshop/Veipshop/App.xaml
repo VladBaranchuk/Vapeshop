@@ -1,0 +1,15 @@
+﻿<Application x:Class="Veipshop.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Veipshop"
+             StartupUri="./View/MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="View/LoginView.xaml" />
+                <ResourceDictionary Source="View/SignupView.xaml" />
+                <ResourceDictionary Source="View/RegistrationView.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

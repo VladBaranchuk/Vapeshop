@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Veipshop.ViewModel.Administrator">
+    <DataTemplate DataType="{x:Type local:AppAdministratorVM}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="171*"/>
+                <RowDefinition Height="566*"/>
+            </Grid.RowDefinitions>
+            <DockPanel Grid.RowSpan="2">
+                <Grid Width="342" DockPanel.Dock="Left" Background="#FF2D2D2D">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="63*"/>
+                        <RowDefinition Height="102*"/>
+                        <RowDefinition Height="572*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="logOut" Grid.Row="0" Command="{Binding ExitCommand}" Foreground="#FF4040" BorderThickness="0" FontFamily="Calibri" FontSize="18" FontWeight="Bold" Background="Transparent" Margin="10">Выход</Button>
+                    <StackPanel Orientation="Horizontal" Margin="10,0,0,8" Grid.Row="1" >
+                        <Border Width="50" Height="50" Background="{Binding Photo}">
+                        </Border>
+                        <StackPanel Margin="0,20, 0, 0">
+                            <TextBox Text="{Binding Name}" Margin="12,0,0,0" IsReadOnly="True" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="#AFAFAF" FontFamily="Calibri" FontSize="18" Width="221" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" FontWeight="regular"/>
+                            <TextBox Text="{Binding Surname}" Margin="12,0,0,0" IsReadOnly="True" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="#AFAFAF" FontFamily="Calibri" FontSize="18" Width="221" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" FontWeight="regular"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Grid.Row="2">
+                        <Button FontFamily="Calibri" Command="{Binding PodCommand}" FontSize="18" FontWeight="Bold" Foreground="White" Background="Transparent" BorderThickness="0" Height="50">POD-системы</Button>
+                        <Button FontFamily="Calibri" Command="{Binding THSCommand}" FontSize="18" FontWeight="Bold" Foreground="White" Background="Transparent" BorderThickness="0" Height="50">Системы нагревания табака</Button>
+                        <Button FontFamily="Calibri" Command="{Binding VapingLiquidCommand}" FontSize="18" FontWeight="Bold" Foreground="White" Background="Transparent" BorderThickness="0" Height="50">Жидкость для вейпа</Button>
+                        <Button FontFamily="Calibri" Command="{Binding VapesCommand}" FontSize="18" FontWeight="Bold" Foreground="White" Background="Transparent" BorderThickness="0" Height="50">Вейпы</Button>
+                    </StackPanel>
+                </Grid>
+                <Grid Height="80" DockPanel.Dock="Top" Background="#FF414141">
+                    <StackPanel Orientation="Horizontal">
+                        <Button FontFamily="Calibri" Command="{Binding SearchCommand}" FontSize="18" FontWeight="Bold" Foreground="White" Background="Transparent" BorderThickness="0" Height="50" Margin="0,15" Width="180">ПОИСК</Button>
+                        <Button FontFamily="Calibri" Command="{Binding NewProductCommand}" FontSize="18" FontWeight="Bold" Foreground="White" Background="Transparent" BorderThickness="0" Height="50" Margin="0,15" Width="180">ДОБАВИТЬ ТОВАР</Button>
+                        <Button FontFamily="Calibri" Command="{Binding OrdersCommand}" FontSize="18" FontWeight="Bold" Foreground="White" Background="Transparent" BorderThickness="0" Height="50" Margin="0,15" Width="180">ЗАКАЗЫ</Button>
+                    </StackPanel>
+                </Grid>
+                <ContentPresenter Content="{Binding CurrentVM}" Width="1024"/>
+            </DockPanel>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

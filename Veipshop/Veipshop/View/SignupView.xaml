@@ -1,0 +1,58 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Veipshop.ViewModel">
+    <DataTemplate DataType="{x:Type local:SignupVM}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="264*"/>
+                <ColumnDefinition Width="955*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="42*"/>
+                <RowDefinition Height="305*"/>
+                <RowDefinition Height="72*"/>
+
+            </Grid.RowDefinitions>
+            <TextBlock FontFamily="Calibri" Grid.Row="0" FontSize="18" FontWeight="Bold" Foreground="Black" Margin="10,10,109,10">Регистрация</TextBlock>
+            <StackPanel Grid.Row="1" Margin="16,10,224,10" Grid.Column="1">
+                <Label Foreground="Black" FontFamily="Calibri" FontSize="18" Height="28" Margin="22,0,0,0">Фото</Label>
+                <Border Height="250" Width="250" BorderThickness="1" Background="{Binding Photo}" BorderBrush="Black" Margin="22,0,433,0">
+                </Border>
+                <Button Height="40" Width="100" Command="{Binding PhotoCommand}" FontFamily="Calibri"  Margin="27,0,588,0">Добавить</Button>
+            </StackPanel>
+            <StackPanel Margin="0,10,0,0" Grid.Row="1">
+                <StackPanel>
+                    <Label Foreground="Black" FontFamily="Calibri" FontSize="18" Height="28" Margin="22,0,0,0" Content="Имя"/>
+                    <Border BorderBrush="#FFD0D0D0" HorizontalAlignment="Left" Width="252">
+                        <TextBox x:Name="Name" Text="{Binding Name}" MaxLength="45" Width="221" Height="30" FontFamily="Calibri" FontSize="14"/>
+                    </Border>
+                </StackPanel>
+                <StackPanel>
+                    <Label Foreground="Black" FontFamily="Calibri" FontSize="18" Height="28" Margin="22,0,10,0" Content="Фамилия"/>
+                    <Border BorderBrush="#FFD0D0D0" HorizontalAlignment="Left" Width="252">
+                        <TextBox x:Name="Surname" Text="{Binding Surname}" MaxLength="45" Width="221" Height="30" FontFamily="Calibri" FontSize="14"/>
+                    </Border>
+                </StackPanel>
+
+                <Label Foreground="Black" FontFamily="Calibri" FontSize="18" Height="28" Margin="22,0,0,0">Логин</Label>
+                <Border BorderBrush="#FFD0D0D0" HorizontalAlignment="Left" Width="252">
+                    <TextBox x:Name="Login" Text="{Binding Login}" MaxLength="45" Width="221" Height="30" FontFamily="Calibri" FontSize="14"/>
+                </Border>
+
+                <StackPanel>
+                    <Label Foreground="Black" FontFamily="Calibri" FontSize="18" Height="28" Margin="22,0,0,0">Пароль</Label>
+                    <Border BorderBrush="#FFD0D0D0" HorizontalAlignment="Left" Width="252">
+                        <TextBox x:Name="Password" Text="{Binding Password}" MaxLength="45" Width="221" Height="30" FontFamily="Calibri" FontSize="14"/>
+                    </Border>
+                </StackPanel>
+                <StackPanel>
+                    <Label Foreground="Black" FontFamily="Calibri" FontSize="18" Height="28" Margin="22,0,0,0">Повторите пароль</Label>
+                    <Border BorderBrush="#FFD0D0D0" HorizontalAlignment="Left" Width="252">
+                        <TextBox x:Name="PasswordConfirm" Text="{Binding ConfirmPassword}" MaxLength="45" Width="221" Height="30" FontFamily="Calibri" FontSize="14"/>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
+            <Button FontFamily="Calibri" Command="{Binding SignupCommand}" Grid.Row="2" FontSize="18" FontWeight="Bold" Foreground="Black" Background="#C4C4C4" BorderThickness="0" Margin="23,10,0,60" Grid.Column="0" HorizontalAlignment="Left" Width="241">Зарегестрироваться</Button>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

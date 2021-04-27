@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Veipshop.ViewModel"
+                    xmlns:service="clr-namespace:Veipshop.Service">
+    <DataTemplate DataType="{x:Type local:BasketVM}">
+        <DataTemplate.Resources>
+            <service:ImagePathConverter x:Key="ImagePathConverter"/>
+        </DataTemplate.Resources>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Height="30" Grid.Row="0">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="16" FontWeight="Bold">Корзина</TextBlock>
+                    <Button Command="{Binding ToOrderCommand}" Width="100" Height="30" Margin="850,0, 0, 0">Заказать</Button>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1" >
+                <ListBox ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" ScrollViewer.HorizontalScrollBarVisibility="Disabled"  Grid.Column="0" Width="1024">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel IsItemsHost="True" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" Width="190" Margin="25">
+                                <Image Source="{Binding Path=product_id, Converter={StaticResource ImagePathConverter}}" Height="200" />
+                                <TextBlock Text="{Binding Path=name}" TextWrapping="Wrap" TextAlignment="Center" Height="54" Margin="7,0"/>
+                                <TextBlock Text="{Binding StringFormat=\{0\} рублей, Path=price}" TextWrapping="Wrap" FontSize="16" FontWeight="Bold" TextAlignment="Center" Height="26" Margin="10,0" Width="170"/>
+                                <Button Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext.BasketCommand}"
+                                        CommandParameter="{Binding}"
+                                        Height="32"
+                                        Margin="28,0">Удалить из корзины</Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>
